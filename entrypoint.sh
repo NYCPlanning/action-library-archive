@@ -8,7 +8,7 @@ if [ "$7" != "" ] ; then version="--version $7"; else version=''; fi
 
 for format in $3
 do
-  library archive --name $name --path $path -o $format $s3 $compress $latest $version &
+  library archive $name $path -o $format $s3 $compress $latest $version &
 done
 
 wait
