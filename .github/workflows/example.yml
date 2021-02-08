@@ -1,0 +1,33 @@
+name: Example
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    env: 
+      AWS_S3_ENDPOINT: ${{ secrets.DO_S3_ENDPOINT }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.DO_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: edm-recipes
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: NYCPlanning/action-library-archive@main
+        id: dcp_commercialoverlay
+        with:
+          name: dcp_commercialoverlay
+          latest: true
+          s3: false
+          compress: true
+          output_format: shapefile csv pgdump
+
+      - uses: NYCPlanning/action-library-archive@main
+        id: pluto
+        with:
+          path: dcp_mappluto.yml
+          latest: true
+          s3: false
+          compress: true
+          output_format: shapefile pgdump
+          version: 20v8
