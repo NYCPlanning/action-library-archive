@@ -1,5 +1,8 @@
 name: 'NYCPlanning - Data Library Archive Action'
-description: 'Data Library Update Operations'
+description: 'Data Library Archive Operations'
+branding:
+  icon: 'database'  
+  color: 'green'
 inputs:
   name:
     description: 'Name of the dataset'
