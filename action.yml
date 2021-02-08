@@ -1,4 +1,4 @@
-name: 'Data Library'
+name: 'NYCPlanning - Data Library Archive Action'
 description: 'Data Library Update Operations'
 inputs:
   name:
