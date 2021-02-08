@@ -18,7 +18,7 @@ jobs:
 2. If you would like to import a pre-configured dataset included in the `library` package, you can declare the following:
 > Check [here](https://github.com/NYCPlanning/db-data-library/tree/main/library/templates) for available datasets
 ```yml
-- uses: NYCPlanning/action-library-archive@main
+- uses: NYCPlanning/action-library-archive@v1
   id: dcp_commercialoverlay
   with:
     # name of the dataset
@@ -44,7 +44,7 @@ jobs:
 # Git pull the repo
 - uses: actions/checkout@v2
 
-- uses: NYCPlanning/action-library-archive@main
+- uses: NYCPlanning/action-library-archive@v1
   id: pluto
   with:
     # Specify the path to the configuration file
