@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: NYCPlanning/action-library-archive@v1.0
+      - uses: NYCPlanning/action-library-archive@v1.1
         id: dcp_commercialoverlay
         with:
           name: dcp_commercialoverlay
@@ -22,7 +22,7 @@ jobs:
           compress: true
           output_format: shapefile csv pgdump
 
-      - uses: NYCPlanning/action-library-archive@v1.0
+      - uses: NYCPlanning/action-library-archive@v1.1
         id: pluto
         with:
           path: dcp_mappluto.yml
