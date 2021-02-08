@@ -1,0 +1,47 @@
+name: 'Data Library'
+description: 'Data Library Update Operations'
+inputs:
+  name:
+    description: 'Name of the dataset'
+    required: true
+    default: ''
+  path:
+    description: 'Path to the dataset yml'
+    required: true
+    default: ''
+  output_format:
+    description: 'Output format, including [shapefile, csv, pgdump, geojson]'
+    required: true
+    default: 'shapefile csv pgdump geojson'
+  s3:
+    description: 'Upload to s3 (true/false)'
+    required: false
+    default: 'false'
+  compress:
+    description: 'Compress to zip archive (true/false)' 
+    required: false
+    default: 'false'
+  latest:
+    description: 'Tagging as latest (true/false)'
+    required: false
+    default: 'false'
+  version:
+    description: 'Specify a version'
+    required: false
+    default: ''
+
+outputs:
+  show:
+    description: 'show what is avaiable'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.name }}
+    - ${{ inputs.path }}
+    - ${{ inputs.output_format }}
+    - ${{ inputs.s3 }}
+    - ${{ inputs.compress }}
+    - ${{ inputs.latest }}
+    - ${{ inputs.version }}
