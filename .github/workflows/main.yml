@@ -1,4 +1,4 @@
-name: test
+name: Example
 
 on: [push]
 
@@ -12,6 +12,7 @@ jobs:
       AWS_S3_BUCKET: edm-recipes
     steps:
       - uses: actions/checkout@v2
+
       - uses: NYCPlanning/action-library-archive@main
         id: dcp_commercialoverlay
         with:
@@ -28,6 +29,6 @@ jobs:
           latest: true
           s3: false
           compress: true
-          output_format: shapefile csv pgdump
+          output_format: shapefile pgdump
           version: 20v8
           
