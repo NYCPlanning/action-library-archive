@@ -40,11 +40,3 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.name }}
-    - ${{ inputs.path }}
-    - ${{ inputs.output_format }}
-    - ${{ inputs.s3 }}
-    - ${{ inputs.compress }}
-    - ${{ inputs.latest }}
-    - ${{ inputs.version }}
