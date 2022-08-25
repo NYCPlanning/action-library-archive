@@ -1,4 +1,4 @@
-FROM nycplanning/library:ubuntu-latest
+FROM nycplanning/library:ubuntu-pluto_templates
 
 COPY script.py script.py
 
