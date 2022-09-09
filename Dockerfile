@@ -10,5 +10,4 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 
 COPY script.py script.py
 
-RUN poetry run python script.py
-# CMD ["python", "script.py"]
+CMD ["poetry", "run", "python", "script.py"]
