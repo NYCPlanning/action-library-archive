@@ -7,7 +7,10 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 # ENV PATH="~/.local/bin:$PATH"
 
 ENV PATH="${PATH}:/root/.poetry/bin"
+
+WORKDIR /library/
 RUN poetry install
+
 
 COPY script.py script.py
 
