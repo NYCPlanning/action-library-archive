@@ -10,7 +10,7 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 # ENV PATH="~/.poetry/bin:$PATH"
 ENV PATH="${PATH}:/root/.poetry/bin"
 
-WORKDIR /library/
+# WORKDIR /library/
 RUN poetry export -f requirements.txt --output requirements.txt;\
     pip install -r requirements.txt
 
@@ -18,4 +18,4 @@ RUN poetry export -f requirements.txt --output requirements.txt;\
 
 COPY script.py script.py
 
-CMD ["python3", "script.py"]
+CMD ["python", "script.py"]
