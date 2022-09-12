@@ -1,6 +1,6 @@
 FROM nycplanning/library:ubuntu-pluto_templates
 
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_VERSION=1.1.6 python3 -
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # ENV PATH="~/.poetry/bin:$PATH"
 
@@ -9,9 +9,11 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 WORKDIR /library/
-RUN poetry install
+RUN poetry export -f requirements.txt --output requirements.txt;\
+    pip install -r requirements.txt
+
 
 
 COPY script.py script.py
 
-CMD ["poetry", "run", "python", "script.py"]
+CMD ["python3", "script.py"]
