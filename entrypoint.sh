@@ -8,10 +8,10 @@ if [ "$7" != "" ] ; then version="--version $7"; else version=''; fi
 
 for format in $3
 do
-  library archive $name $path -o $format $s3 $compress $latest $version &
+  python3 -m library.cli archive $name $path -o $format $s3 $compress $latest $version &
 done
 
-wait
+# wait
 
-show=$(library show $1 --json)
-echo "::set-output name=show::$show"
+# show=$(library show $1 --json)
+# echo "::set-output name=show::$show"
