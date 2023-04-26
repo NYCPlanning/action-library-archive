@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 if [ "$1" != "" ] ; then name="--name $1"; else name=''; fi
 if [ "$2" != "" ] ; then path="--path $2"; else path=''; fi
 if [ "$4" = "true" ] ; then s3="--s3"; else s3=''; fi
