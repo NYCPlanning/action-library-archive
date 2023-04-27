@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM nycplanning/library:ubuntu-latest
+FROM nycplanning/library:ubuntu-staging
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
