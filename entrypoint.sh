@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ "$1" != "" ] ; then name="--name $1"; else name=''; fi
 if [ "$2" != "" ] ; then path="--path $2"; else path=''; fi
 if [ "$4" = "true" ] ; then s3="--s3"; else s3=''; fi
@@ -8,7 +9,10 @@ if [ "$7" != "" ] ; then version="--version $7"; else version=''; fi
 
 for format in $3
 do
-  library archive $name $path -o $format $s3 $compress $latest $version &
+  if ! library archive $name $path -o $format $s3 $compress $latest $version
+  then
+    exit 1
+  fi
 done
 
 wait
