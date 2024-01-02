@@ -1,3 +1,5 @@
+This repo is deprecated. Data library has been incorporated into DCP Data Engineering's [dcpy](https://github.com/NYCPlanning/data-engineering/tree/main/dcpy) module, where we might make further changes to it. This action (and underlying docker images) will remain available but unmaintained from now on.
+
 # Library Archive Action
 
 This action will perform the [data library](https://github.com/NYCPlanning/db-data-library) `archive` command with given configurations, which would extract data from source and archive in in S3.
